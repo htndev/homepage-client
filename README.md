@@ -1,14 +1,14 @@
-# homepage-client
+# xBeat homepage
 
 ## Installation
 
-With npm
+### With npm
 
 ```sh
 npm i
 ```
 
-With yarn
+### With yarn
 
 ```sh
 yarn
@@ -18,4 +18,10 @@ yarn
 
 ```sh
 yarn dev
+```
+
+## Build
+
+```sh
+yarn build
 ```
