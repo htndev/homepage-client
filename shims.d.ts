@@ -19,7 +19,7 @@ declare module 'vue/types/vue' {
     fetchOnServer?: boolean | (() => boolean);
     head?(): MetaInfo;
     key?: string | ((to: Route) => string);
-    layout?: string | ((ctx: Context) => string);
+    layout?(ctx: Context): string;
     loading?: boolean;
     middleware?: Middleware | Middleware[];
     scrollToTop?: boolean;
@@ -29,6 +29,8 @@ declare module 'vue/types/vue' {
     meta?: { [key: string]: any };
   }
 }
+
+declare module 'vue-material-design-icons';
 
 declare module '*.vue' {
   export default Vue;

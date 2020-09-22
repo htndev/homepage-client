@@ -1,11 +1,12 @@
-import { Action, getModule, Module, Mutation, VuexModule } from 'vuex-module-decorators';
+import { Action, Module, Mutation, VuexModule, getModule } from 'vuex-module-decorators';
+import { Store } from 'vuex';
 
 @Module({
   name: 'user',
   stateFactory: true,
   namespaced: true
 })
-export class UserModule extends VuexModule {
+export default class User extends VuexModule {
   identity = null;
 
   get userAuthorized(): boolean {
@@ -25,4 +26,4 @@ export class UserModule extends VuexModule {
   }
 }
 
-export default (store: any) => getModule(UserModule, store);
+export const UserModule = (store: Store<User>) => getModule(User, store);

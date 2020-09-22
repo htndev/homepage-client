@@ -19,5 +19,7 @@ module.exports = {
     '@xbeat/eslint-config-client'
   ],
   plugins: ['prettier'],
-  rules: {}
+  rules: {
+    'no-useless-constructor': ['off']
+  }
 };

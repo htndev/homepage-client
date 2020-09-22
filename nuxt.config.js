@@ -14,8 +14,8 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
   },
   loading: { color: '#fff' },
-  css: [],
-  plugins: [],
+  css: ['@/node_modules/reset-css/reset.css', '@/assets/styles/main.less', '@mdi/font/css/materialdesignicons.css'],
+  plugins: ['@/plugins/setup'],
   buildModules: ['@nuxtjs/eslint-module', '@nuxt/typescript-build'],
   modules: [
     '@nuxtjs/axios',
@@ -43,5 +43,12 @@ export default {
     ]
   ],
   axios: {},
-  build: {}
+  build: {
+    extend(config) {
+      config.module.rules.push({
+        test: /.vue/,
+        loader: 'vue-svg-inline-loader'
+      });
+    }
+  }
 };
