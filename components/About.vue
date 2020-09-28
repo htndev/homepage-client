@@ -3,7 +3,8 @@
     <xb-container>
       <div class="wrapper">
         <section class="image">
-          <img src="@/assets/img/building.jpg" alt="Beatiful building" />
+          <!-- <img src="@/assets/img/building.jpg" alt="Beatiful building" /> -->
+          <img src="@/assets/img/dancing.svg" alt svg-inline />
         </section>
         <section class="description">
           <h2>About us</h2>
@@ -64,8 +65,9 @@ export default class About extends Vue {}
     }
 
     .image {
-      img {
-        box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
+      svg {
+        width: 600px;
+        height: auto;
       }
     }
   }
