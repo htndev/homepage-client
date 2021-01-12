@@ -1,4 +1,7 @@
 export default {
+  server: {
+    port: 7070
+  },
   mode: 'universal',
   head: {
     title: process.env.npm_package_name || '',
