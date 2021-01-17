@@ -3,9 +3,9 @@
     <xb-container>
       <div class="row">
         <span>© xBeat {{ new Date().getFullYear() }}</span>
-        <a :href="CONSTANTS.SERVICE.PLAYER">{{ $t('web-player') }}</a>
-        <a :href="CONSTANTS.SERVICE.ARTIST">{{ $t('for-artists') }}</a>
-        <a :href="CONSTANTS.SERVICE.HELP">{{ $t('help') }}</a>
+        <a :href="CONSTANTS.CLIENT.PLAYER">{{ $t('web-player') }}</a>
+        <a :href="CONSTANTS.CLIENT.ARTIST">{{ $t('for-artists') }}</a>
+        <a :href="CONSTANTS.CLIENT.HELP">{{ $t('help') }}</a>
         <span>
           <a href="https://instagram.com"><instagram-icon /></a>
         </span>

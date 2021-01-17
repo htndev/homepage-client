@@ -55,7 +55,7 @@ export default class AlbumPlate extends Vue {
   }
 
   get link(): string {
-    return `${CONSTANTS.SERVICE.PLAYER}/${this.album.id}`;
+    return `${CONSTANTS.CLIENT.PLAYER}/${this.album.id}`;
   }
 
   get songTitle(): string {

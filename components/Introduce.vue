@@ -6,7 +6,7 @@
           <h1>{{ $t('slogan') }}</h1>
           <h2>{{ $t('your-friend-in-music-world') }}.</h2>
           <h3>{{ $t('listen-top-charts') }}.</h3>
-          <a href="#" tabindex="1">{{ $t(actionButtonTitle) }}</a>
+          <a :href="actionButtonLink" tabindex="1">{{ $t(actionButtonTitle) }}</a>
         </section>
         <section class="plates">
           <main>
@@ -26,6 +26,7 @@ import AlbumPlate from '@/components/AlbumPlate.vue';
 import { UserModule } from '@/store/user';
 import { registerNuxtHooks } from '@/utils/nuxt';
 import { Album } from '@/utils/common';
+import CONSTANTS from '@/utils/constants';
 
 registerNuxtHooks(Component);
 
@@ -78,6 +79,10 @@ export default class Introduce extends Vue {
 
   get actionButtonTitle(): string {
     return this.isAuthorized ? 'go-to-web-player' : 'sign-in';
+  }
+
+  get actionButtonLink(): string {
+    return this.isAuthorized ? CONSTANTS.CLIENT.PLAYER : `${CONSTANTS.CLIENT.ID}/${this.$i18n.locale}/signin`;
   }
 }
 </script>

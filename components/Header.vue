@@ -6,15 +6,15 @@
           <xb-logo />
         </n-link>
         <span class="spacer" />
-        <a :href="CONSTANTS.SERVICE.ARTIST">{{ $t('for-artists') }}</a>
-        <a :href="CONSTANTS.SERVICE.HELP">{{ $t('help') }}</a>
+        <a :href="CONSTANTS.CLIENT.ARTIST">{{ $t('for-artists') }}</a>
+        <a :href="CONSTANTS.CLIENT.HELP">{{ $t('help') }}</a>
         <template v-if="isAuthorized">
-          <a :href="`${CONSTANTS.SERVICE.PLAYER}/profile`">{{ $t('profile') }}</a>
+          <a :href="`${CONSTANTS.CLIENT.PLAYER}/profile`">{{ $t('profile') }}</a>
         </template>
         <template v-else>
           <span class="separator">|</span>
-          <a :href="`${CONSTANTS.SERVICE.PLAYER}/signin`">{{ $t('sign-in') }}</a>
-          <a :href="`${CONSTANTS.SERVICE.PLAYER}/signup`">{{ $t('sign-up') }}</a>
+          <a :href="signInLink">{{ $t('sign-in') }}</a>
+          <a :href="signUpLink">{{ $t('sign-up') }}</a>
         </template>
       </div>
     </xb-container>
@@ -25,7 +25,7 @@
 import { Vue, Component } from 'vue-property-decorator';
 import { registerNuxtHooks } from '@/utils/nuxt';
 import { UserModule } from '@/store/user';
-import CONSTANTS from '@/utils/constants';
+import CONSTANTS, { AllowedRedirects } from '@/utils/constants';
 
 registerNuxtHooks(Component);
 
@@ -33,9 +33,18 @@ registerNuxtHooks(Component);
 export default class XbHeader extends Vue {
   CONSTANTS = CONSTANTS;
   userModule = UserModule(this.$store);
+  baseURL = `${CONSTANTS.CLIENT.ID}/${this.$i18n.locale}`;
 
   get isAuthorized() {
-    return this.userModule.userAuthorized;
+    return !this.userModule.userAuthorized;
+  }
+
+  get signInLink(): string {
+    return `${this.baseURL}/signin?to=${AllowedRedirects.Player}`;
+  }
+
+  get signUpLink(): string {
+    return `${this.baseURL}/signup?to=${AllowedRedirects.Player}`;
   }
 }
 </script>
