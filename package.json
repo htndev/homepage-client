@@ -12,7 +12,9 @@
     "generate": "nuxt generate",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "lint:fix": "eslint --fix --ext .js,.vue --ignore-path .gitignore .",
-    "test": "jest"
+    "test": "jest",
+    "i18n:upload": "localazy upload",
+    "i18n:download": "localazy download"
   },
   "lint-staged": {
     "*.{js,vue}": "eslint"

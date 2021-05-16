@@ -29,7 +29,7 @@ export default {
           { code: 'en', file: 'en.json', iso: 'en-EN', name: 'English' },
           { code: 'de', file: 'de.json', iso: 'de', name: 'Deutsch' },
           { code: 'ru', file: 'ru.json', iso: 'ru', name: 'Русский' },
-          { code: 'ua', file: 'ua.json', iso: 'ua', name: 'Українська' }
+          { code: 'uk', file: 'uk.json', iso: 'uk', name: 'Українська' }
         ],
         defaultLocale: 'en',
         langDir: 'i18n/',
