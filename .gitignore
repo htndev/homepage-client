@@ -1,0 +1,15 @@
+logs
+*.log
+npm-debug.log*
+.yarn-integrity
+yarn-debug.log*
+yarn-error.log*
+build
+dist
+node_modules/
+.nuxt
+.idea
+.DS_Store
+i18n
+coverage
+node_modules
